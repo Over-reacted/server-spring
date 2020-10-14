@@ -1,4 +1,4 @@
-package us.overreacted.serverspring.model;
+package us.overreacted.serverspring.model.response;
 
 import org.hibernate.validator.constraints.Length;
 

@@ -4,8 +4,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import us.overreacted.serverspring.entity.User;
 import us.overreacted.serverspring.errors.BadRequestError;
-import us.overreacted.serverspring.model.LoginRequest;
-import us.overreacted.serverspring.model.RegisterRequest;
+import us.overreacted.serverspring.model.response.LoginRequest;
+import us.overreacted.serverspring.model.response.RegisterRequest;
 import us.overreacted.serverspring.repository.UsersRepository;
 
 import java.util.Optional;

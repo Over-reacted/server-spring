@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import us.overreacted.serverspring.model.LoginRequest;
-import us.overreacted.serverspring.model.RegisterRequest;
-import us.overreacted.serverspring.model.TokenResponse;
+import us.overreacted.serverspring.model.request.TokenResponse;
+import us.overreacted.serverspring.model.response.LoginRequest;
+import us.overreacted.serverspring.model.response.RegisterRequest;
 import us.overreacted.serverspring.service.JwtService;
 import us.overreacted.serverspring.service.UserService;
 

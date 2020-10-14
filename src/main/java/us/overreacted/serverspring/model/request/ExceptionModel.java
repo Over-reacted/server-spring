@@ -1,4 +1,4 @@
-package us.overreacted.serverspring.model;
+package us.overreacted.serverspring.model.request;
 
 /**
  * @author Murad Hamza on 14.10.2020 г.

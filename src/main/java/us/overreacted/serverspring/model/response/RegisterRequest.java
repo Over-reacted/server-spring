@@ -1,4 +1,4 @@
-package us.overreacted.serverspring.model;
+package us.overreacted.serverspring.model.response;
 
 import javax.validation.constraints.NotNull;
 
