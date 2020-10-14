@@ -22,7 +22,7 @@ public class JwtServiceImpl implements JwtService {
     private final JWTDecoder decoder;
     private final HMACVerifier verifier;
 
-    public JwtServiceImpl(@Value("{jwt.secret:ASDA}") final String jwtSecret) {
+    public JwtServiceImpl(@Value("${jwt.secret:ASDA}") final String jwtSecret) {
         this.singer = HMACSigner.newSHA256Signer(jwtSecret);
         this.verifier = HMACVerifier.newVerifier(jwtSecret);
         this.encoder = JWT.getEncoder();
