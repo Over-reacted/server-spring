@@ -1,12 +1,12 @@
-package eu.overreacted.serverspring.service;
+package us.overreacted.serverspring.service;
 
-import eu.overreacted.serverspring.entity.User;
-import eu.overreacted.serverspring.errors.BadRequestError;
-import eu.overreacted.serverspring.model.LoginRequest;
-import eu.overreacted.serverspring.model.RegisterRequest;
-import eu.overreacted.serverspring.repository.UsersRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import us.overreacted.serverspring.entity.User;
+import us.overreacted.serverspring.errors.BadRequestError;
+import us.overreacted.serverspring.model.LoginRequest;
+import us.overreacted.serverspring.model.RegisterRequest;
+import us.overreacted.serverspring.repository.UsersRepository;
 
 import java.util.Optional;
 

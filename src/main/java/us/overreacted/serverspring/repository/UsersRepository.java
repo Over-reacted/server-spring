@@ -1,8 +1,8 @@
-package eu.overreacted.serverspring.repository;
+package us.overreacted.serverspring.repository;
 
-import eu.overreacted.serverspring.entity.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
+import us.overreacted.serverspring.entity.User;
 
 import java.util.Optional;
 

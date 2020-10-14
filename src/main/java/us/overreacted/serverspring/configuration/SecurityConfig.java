@@ -1,4 +1,4 @@
-package eu.overreacted.serverspring.configuration;
+package us.overreacted.serverspring.configuration;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;

@@ -1,6 +1,5 @@
-package eu.overreacted.serverspring.errors;
+package us.overreacted.serverspring.errors;
 
-import eu.overreacted.serverspring.model.ExceptionModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -9,6 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.NoHandlerFoundException;
+import us.overreacted.serverspring.model.ExceptionModel;
 
 /**
  * @author Murad Hamza on 14.10.2020 г.

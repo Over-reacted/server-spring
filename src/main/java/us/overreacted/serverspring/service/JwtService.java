@@ -1,4 +1,4 @@
-package eu.overreacted.serverspring.service;
+package us.overreacted.serverspring.service;
 
 /**
  * @author Murad Hamza on 14.10.2020 г.

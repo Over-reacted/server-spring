@@ -1,4 +1,4 @@
-package eu.overreacted.serverspring.service;
+package us.overreacted.serverspring.service;
 
 import io.fusionauth.jwt.JWTDecoder;
 import io.fusionauth.jwt.JWTEncoder;

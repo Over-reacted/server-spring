@@ -1,15 +1,15 @@
-package eu.overreacted.serverspring.errors;
+package us.overreacted.serverspring.errors;
 
 /**
  * @author Murad Hamza on 14.10.2020 г.
  */
 
-public class RequestValidationError extends CustomException {
+public class BadRequestError extends CustomException {
     private static final int STATUS_CODE = 400;
 
     private final String message;
 
-    public RequestValidationError(final String message) {
+    public BadRequestError(final String message) {
         this.message = message;
     }
 

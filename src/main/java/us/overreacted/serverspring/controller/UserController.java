@@ -1,16 +1,16 @@
-package eu.overreacted.serverspring.controller;
+package us.overreacted.serverspring.controller;
 
-import eu.overreacted.serverspring.model.LoginRequest;
-import eu.overreacted.serverspring.model.RegisterRequest;
-import eu.overreacted.serverspring.model.TokenResponse;
-import eu.overreacted.serverspring.service.JwtService;
-import eu.overreacted.serverspring.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import us.overreacted.serverspring.model.LoginRequest;
+import us.overreacted.serverspring.model.RegisterRequest;
+import us.overreacted.serverspring.model.TokenResponse;
+import us.overreacted.serverspring.service.JwtService;
+import us.overreacted.serverspring.service.UserService;
 
 import javax.validation.Valid;
 

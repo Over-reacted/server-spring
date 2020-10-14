@@ -1,4 +1,4 @@
-package eu.overreacted.serverspring.errors;
+package us.overreacted.serverspring.errors;
 
 /**
  * @author Murad Hamza on 14.10.2020 г.
