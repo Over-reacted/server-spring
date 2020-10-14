@@ -3,6 +3,7 @@ package us.overreacted.serverspring.errors;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -21,9 +22,9 @@ public class ErrorAdvisor {
         return ResponseEntity.status(ex.getStatusCode()).body(new ExceptionModel(ex.getMessage()));
     }
 
-    @ExceptionHandler(NoHandlerFoundException.class)
+    @ExceptionHandler({NoHandlerFoundException.class, HttpRequestMethodNotSupportedException.class})
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ResponseEntity<ExceptionModel> handleNotFound(final NoHandlerFoundException ex) {
+    public ResponseEntity<ExceptionModel> handleNotFound() {
         return ResponseEntity.status(404).body(new ExceptionModel("Not found"));
     }
 
