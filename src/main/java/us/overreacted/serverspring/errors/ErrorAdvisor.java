@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.NoHandlerFoundException;
-import us.overreacted.serverspring.model.request.ExceptionModel;
+import us.overreacted.serverspring.model.response.ExceptionModel;
 
 /**
  * @author Murad Hamza on 14.10.2020 г.
