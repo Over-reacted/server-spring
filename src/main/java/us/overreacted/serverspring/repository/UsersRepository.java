@@ -1,6 +1,6 @@
 package us.overreacted.serverspring.repository;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import us.overreacted.serverspring.entity.User;
 
@@ -11,8 +11,8 @@ import java.util.Optional;
  */
 
 @Repository
-public interface UsersRepository extends MongoRepository<User, String> {
+public interface UsersRepository extends CrudRepository<User, String> {
 
-    Optional<User> findOneByEmail(final String email);
+    Optional<Customer> findOneByEmail(final String email);
 
 }

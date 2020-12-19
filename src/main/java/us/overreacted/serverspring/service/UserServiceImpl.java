@@ -2,7 +2,7 @@ package us.overreacted.serverspring.service;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import us.overreacted.serverspring.entity.User;
+import us.overreacted.serverspring.entity.Customer;
 import us.overreacted.serverspring.errors.BadRequestError;
 import us.overreacted.serverspring.model.request.LoginRequest;
 import us.overreacted.serverspring.model.request.RegisterRequest;
@@ -30,11 +30,11 @@ public class UserServiceImpl implements UserService {
     public String login(final LoginRequest loginRequest) {
         this.validateLoginRequest(loginRequest);
 
-        final Optional<User> oneByEmail = usersRepository.findOneByEmail(loginRequest.getEmail());
+        final Optional<Customer> oneByEmail = usersRepository.findOneByEmail(loginRequest.getEmail());
         if (oneByEmail.isPresent()) {
-            final User user = oneByEmail.get();
-            if (passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
-                return user.getId();
+            final Customer customer = oneByEmail.get();
+            if (passwordEncoder.matches(loginRequest.getPassword(), customer.getPassword())) {
+                return customer.getId();
             }
         }
         throw new BadRequestError("Invalid credentials!");
@@ -44,14 +44,14 @@ public class UserServiceImpl implements UserService {
     public String registerUser(final RegisterRequest registerRequest) {
         this.validateRegisterRequest(registerRequest);
 
-        final Optional<User> oneByEmail = usersRepository.findOneByEmail(registerRequest.getEmail());
+        final Optional<Customer> oneByEmail = usersRepository.findOneByEmail(registerRequest.getEmail());
         if (oneByEmail.isPresent()) {
             throw new BadRequestError("User already exists!");
         }
 
-        final User user = new User(registerRequest.getEmail(), registerRequest.getPassword());
-        final User savedUser = usersRepository.save(user);
-        return savedUser.getId();
+        final Customer customer = new Customer(registerRequest.getEmail(), registerRequest.getPassword());
+        final Customer savedCustomer = usersRepository.save(customer);
+        return savedCustomer.getId();
     }
 
     private void validateLoginRequest(final LoginRequest loginRequest) {
