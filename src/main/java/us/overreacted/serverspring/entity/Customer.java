@@ -1,49 +1,57 @@
 package us.overreacted.serverspring.entity;
 
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
-
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import java.time.LocalDateTime;
 
 /**
  * @author Murad Hamza on 14.10.2020 г.
  */
 
-@Document(collection = "users")
-public class User {
+@Entity
+public class Customer {
 
-    @DBRef
+    @Id
     private String id;
     private String email;
     private String password;
-    @CreatedDate
     private LocalDateTime createdAt;
-    @LastModifiedDate
     private LocalDateTime updatedAt;
 
-    public User() {
+    public Customer() {
     }
 
-    public User(final String email, final String password) {
+    public Customer(final String email, final String password) {
         this.email = email;
         this.password = password;
     }
 
-    public User(final String id, final String email, final String password) {
+    public Customer(final String id, final String email, final String password) {
         this.id = id;
         this.email = email;
         this.password = password;
     }
 
-    public User(final String id, final String email, final String password, final LocalDateTime createdAt,
-                final LocalDateTime updatedAt) {
+    public Customer(final String id, final String email, final String password, final LocalDateTime createdAt,
+                    final LocalDateTime updatedAt) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+    }
+
+    @PreUpdate
+    private void preUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    @PrePersist
+    private void prePersist() {
+        this.createdAt = LocalDateTime.now();
+        preUpdate();
     }
 
     public LocalDateTime getCreatedAt() {

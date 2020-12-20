@@ -2,7 +2,7 @@ package us.overreacted.serverspring.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import us.overreacted.serverspring.entity.User;
+import us.overreacted.serverspring.entity.Customer;
 
 import java.util.Optional;
 
@@ -11,7 +11,7 @@ import java.util.Optional;
  */
 
 @Repository
-public interface UsersRepository extends CrudRepository<User, String> {
+public interface UsersRepository extends CrudRepository<Customer, String> {
 
     Optional<Customer> findOneByEmail(final String email);
 
